@@ -3,7 +3,7 @@ import java.awt.Color;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-public class Testing{
+public class Main{
 
     public static void main(String[] args) {
         JFrame frame = new JFrame();
