@@ -1,0 +1,28 @@
+# Maven build output
+target/
+*.jar
+*.war
+
+# Eclipse / old Java IDE files
+.classpath
+.project
+.settings/
+.factorypath
+
+# VS Code settings
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Java compiled files (only if they appear outside Maven)
+*.class
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
