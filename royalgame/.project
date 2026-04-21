@@ -1,3 +1,9 @@
+<!--
+	IGNORE this file
+	What is it? * An IDE config file
+	Purpose? * Tell IDE where the source is, What dependecies exist
+-->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>royalgame</name>
