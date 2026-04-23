@@ -1,0 +1,11 @@
+.root{
+    -fx-background-color:#037920fb; 
+}
+
+.label{
+    -fx-alignment:center;
+}
+
+#title1{
+    -fx-font-family:"Cooper Black";
+}
