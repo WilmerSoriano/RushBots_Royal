@@ -6,6 +6,18 @@
     -fx-alignment:center;
 }
 
-#title1{
-    -fx-font-family:"Cooper Black";
+
+.button{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.title1{
+    -fx-font-family: "DejaVu Sans";
+}
+
+.button:hover{
+    -fx-text-fill: gold;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
 }
