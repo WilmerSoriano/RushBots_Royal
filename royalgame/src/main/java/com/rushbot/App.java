@@ -17,9 +17,10 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {        
-        scene = new Scene(loadFXML("MenuScene"));
+        scene = new Scene(loadFXML("MenuScene"), 700, 700);
         scene.getStylesheets().add(App.class.getResource("css/application.css").toExternalForm());
         stage.setScene(scene);
+        stage.setResizable(false);   // prevents resizing
         stage.show();
     }
 
@@ -33,7 +34,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        System.out.println("***Opening***");
         launch();
+        System.out.println("***Closing***");
     }
-
 }
