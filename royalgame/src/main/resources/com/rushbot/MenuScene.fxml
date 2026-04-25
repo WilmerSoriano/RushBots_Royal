@@ -14,36 +14,36 @@
       <Pane fx:id="coinLayer" prefHeight="700.0" prefWidth="700.0" />
       <AnchorPane fx:id="gameMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0">
          <children>
-            <VBox fx:id="menu_vbox" alignment="CENTER" layoutX="2.0" layoutY="264.0" prefHeight="173.0" prefWidth="700.0">
+            <VBox fx:id="menu_vbox" alignment="CENTER" layoutX="2.0" layoutY="260.0" prefHeight="178.0" prefWidth="700.0" spacing="10.0">
                <children>
-                  <Button fx:id="startG_button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Start Game!" textAlignment="CENTER">
+                  <Button fx:id="startG_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Start Game!" textAlignment="CENTER">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="loadG_button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Load Game">
+                  <Button fx:id="loadG_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Load Game">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="credit_button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Credits">
+                  <Button fx:id="credit_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Credits">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="setting_button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Settings">
+                  <Button fx:id="setting_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Settings">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>
                   </Button>
                </children>
             </VBox>
-            <Label fx:id="title1" alignment="CENTER" layoutX="-1.0" layoutY="78.0" prefHeight="100.0" prefWidth="700.0" text="Rush Bots" textAlignment="CENTER" textFill="#e1b530">
+            <Label fx:id="title1" styleClass="title-glow" alignment="CENTER" layoutX="-1.0" layoutY="78.0" prefHeight="100.0" prefWidth="700.0" text="Rush Bots" textAlignment="CENTER">
                <font>
                   <Font name="Cooper Black" size="50.0" />
                </font>
             </Label>
-            <Label fx:id="title2" alignment="CENTER" layoutX="2.0" layoutY="128.0" prefHeight="100.0" prefWidth="700.0" text="Royal" textAlignment="CENTER" textFill="#e1b530">
+            <Label fx:id="title2" styleClass="title-glow" alignment="CENTER" layoutX="2.0" layoutY="128.0" prefHeight="100.0" prefWidth="700.0" text="Royal" textAlignment="CENTER">
                <font>
                   <Font name="Cooper Black" size="50.0" />
                </font>
