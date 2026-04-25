@@ -20,7 +20,13 @@ public class App extends Application {
         scene = new Scene(loadFXML("MenuScene"), 700, 700);
         scene.getStylesheets().add(App.class.getResource("css/application.css").toExternalForm());
         stage.setScene(scene);
-        stage.setResizable(false);   // prevents resizing
+        
+        stage.setResizable(false); // Locking the windows so user doesn't change size         
+        stage.setMinWidth(700);
+        stage.setMaxWidth(700);
+        stage.setMinHeight(700);
+        stage.setMaxHeight(700);
+        
         stage.show();
     }
 
