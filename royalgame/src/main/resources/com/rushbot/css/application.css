@@ -11,9 +11,9 @@
 */
 
 .title-glow{
-    -fx-text-fill: linear-gradient(#fff8b0, #393101);
+    -fx-text-fill: linear-gradient(#000000, #000000);
     
-    -fx-effect: dropshadow(gaussian, gold, 25, 0.8, 0, 0);
+    -fx-effect: dropshadow(gaussian, gold, 36, 0.8, 0, 0);
 
     -fx-font-weight: bold;
 }
@@ -45,8 +45,8 @@
 
     -fx-text-fill: black;
 
-    -fx-scale-x: 1.1;
-    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
 
-    -fx-effect: dropshadow(gaussian, gold, 25, 0.9, 0, 0);
+    -fx-effect: dropshadow(gaussian, gold, 20, 0.0, 0, 0);
 }
