@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane fx:id="primaryControllerLayer" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rushbot.PrimaryController">
    <children>
       <Pane fx:id="coinLayer" prefHeight="700.0" prefWidth="700.0" />
@@ -16,22 +15,22 @@
          <children>
             <VBox fx:id="menu_vbox" alignment="CENTER" layoutX="2.0" layoutY="260.0" prefHeight="178.0" prefWidth="700.0" spacing="10.0">
                <children>
-                  <Button fx:id="startG_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Start Game!" textAlignment="CENTER">
+                  <Button fx:id="start_button" styleClass="menu-button" mnemonicParsing="false" onAction="#startGame" prefHeight="30.0" prefWidth="220.0" text="Start Game!" textAlignment="CENTER">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="loadG_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Load Game">
+                  <Button fx:id="load_button" styleClass="menu-button" mnemonicParsing="false" onAction="#loadGame" prefHeight="30.0" prefWidth="220.0" text="Load Game">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="credit_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Credits">
+                  <Button fx:id="credit_button" styleClass="menu-button" mnemonicParsing="false" onAction="#showCredit" prefHeight="30.0" prefWidth="220.0" text="Credits">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="setting_button" styleClass="menu-button" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" text="Settings">
+                  <Button fx:id="setting_button" styleClass="menu-button" mnemonicParsing="false" onAction="#showSettings" prefHeight="30.0" prefWidth="220.0" text="Settings">
                      <font>
                         <Font name="Bodoni MT Bold" size="18.0" />
                      </font>

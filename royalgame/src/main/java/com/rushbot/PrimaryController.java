@@ -2,6 +2,7 @@ package com.rushbot;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
+import javafx.event.ActionEvent;
 
 public class PrimaryController {
    
@@ -20,5 +21,18 @@ public class PrimaryController {
         catch(NullPointerException e){
            System.err.println("Coin image not found!");
         }
+    }
+    
+    public void startGame(ActionEvent e){
+       System.out.println("Starting Game!");
+    }
+    public void loadGame(ActionEvent e){
+       System.out.println("Loading Game!");
+    }
+    public void showCredit(ActionEvent e){
+       System.out.println("Showing credits");
+    }
+    public void showSettings(ActionEvent e){
+       System.out.println("Showing settings");
     }
 }
