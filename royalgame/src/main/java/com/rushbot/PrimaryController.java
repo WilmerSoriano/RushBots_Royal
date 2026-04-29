@@ -73,4 +73,8 @@ public class PrimaryController {
     public void openGithub(ActionEvent e){
        System.out.println("opening github");
     }
+    
+    public void onReturn(ActionEvent e){
+       System.out.println("Main Menu");
+    }
 }
