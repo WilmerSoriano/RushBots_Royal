@@ -1,5 +1,11 @@
 .root{
-    -fx-background-color:#037920fb; 
+    -fx-background-image: url("../images/bg.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-color: rgba(0,0,0,0.3);
+    -fx-background-blend-mode: darken;
 }
 
 .label{
