@@ -1,21 +1,26 @@
+/* =========================
+   BACKGROUND
+   =========================
+*/
 .root{
     -fx-background-image: url("../images/bg.png");
+
     -fx-background-size: cover;
-    -fx-background-position: center;
+    -fx-background-position: center center;
     -fx-background-repeat: no-repeat;
 
-    -fx-background-color: rgba(0,0,0,0.3);
+    -fx-background-color: rgb(8, 117, 22);
     -fx-background-blend-mode: darken;
 }
 
 .label{
     -fx-alignment:center;
 }
+
 /* =========================
    TITLE GOLD GLOW
    =========================
 */
-
 .title-glow{
     -fx-text-fill: linear-gradient(#000000, #000000);
     
@@ -44,7 +49,6 @@
    BUTTON HOVER EFFECT
    =========================
 */
-
 .menu-button:hover{
 
     -fx-background-color: linear-gradient(#fff4a3, #ffd700);
