@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
@@ -15,15 +14,14 @@
 
 <StackPane fx:id="primaryControllerLayer" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rushbot.PrimaryController">
    <children>
-      <Pane fx:id="coinLayer" prefHeight="700.0" prefWidth="700.0" />
-      <AnchorPane fx:id="gameMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0">
+      <AnchorPane fx:id="credits" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0">
          <children>
             <Label fx:id="title1" alignment="CENTER" layoutY="95.0" prefHeight="100.0" prefWidth="700.0" styleClass="title-glow" text="Thank you !" textAlignment="CENTER">
                <font>
                   <Font name="Cooper Black" size="50.0" />
                </font>
             </Label>
-            <TextArea fx:id="letter" editable="false" layoutX="-2.0" layoutY="250.0" prefHeight="200.0" prefWidth="700.0" promptText="Hello players" text="                                                             Thank you for playing my game!&#10;A solo project made by me, but not entirely possible without videos provided by Bro Code.&#10;Designing and front-end is not my forte, so yes I used LLM for CSS designs 😣, But all logic of the game and mechanics were coded by me alone👍.&#10;                                                         I had fun and I hope you did as well!&#10;                                              Feel free to contact me or contribute to my game.&#10;                                                                                  See you around!" wrapText="true">
+            <TextArea fx:id="letter" editable="false" layoutX="-2.0" layoutY="250.0" prefHeight="200.0" prefWidth="700.0" promptText="Hello players" text="                                                        Thank you for playing my game!&#10;&#10;A solo project made by me, but not entirely possible without videos provided by Bro Code.&#10;Designing and front-end is not my forte, so yes I used LLM for CSS designs ¬_¬, But all logic of the game and mechanics were coded by me alone╰(*°▽°*)╯.&#10;&#10;                                                        I had fun and I hope you did as well!&#10;                                            Feel free to contact me or contribute to my game.&#10;                                                                     See you around!" wrapText="true">
                <font>
                   <Font name="Cooper Black" size="14.0" />
                </font>
