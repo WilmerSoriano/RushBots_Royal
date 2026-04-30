@@ -31,7 +31,6 @@ public class PrimaryController {
         ActionEvent someEvent = new ActionEvent();
         try{
            coins.start();
-           coins.stop();
         }
         catch(NullPointerException e){
            System.err.println("Coin image not found!");
