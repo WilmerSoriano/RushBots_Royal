@@ -47,8 +47,9 @@ public class PrimaryController {
        //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
        App.setRoot("CreditScene");
     }
-    public void showSettings(ActionEvent e){
+    public void showSettings(ActionEvent e)throws IOException{
        System.out.println("Showing settings");
+       App.setRoot("SettingScene");
     }
     
     public void openYoutube(ActionEvent e){
