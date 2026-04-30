@@ -21,7 +21,7 @@
                   <Font name="Cooper Black" size="50.0" />
                </font>
             </Label>
-            <TextArea fx:id="letter" editable="false" layoutX="-2.0" layoutY="250.0" prefHeight="200.0" prefWidth="700.0" promptText="Hello players" text="                                                        Thank you for playing my game!&#10;&#10;A solo project made by me, but not entirely possible without videos provided by Bro Code.&#10;Designing and front-end is not my forte, so yes I used LLM for CSS designs ¬_¬, But all logic of the game and mechanics were coded by me alone╰(*°▽°*)╯.&#10;&#10;                                                        I had fun and I hope you did as well!&#10;                                            Feel free to contact me or contribute to my game.&#10;                                                                     See you around!" wrapText="true">
+            <TextArea fx:id="letter" editable="false" layoutX="-2.0" layoutY="250.0" prefHeight="200.0" prefWidth="700.0" promptText="Hello players" text="                                                        Thank you for playing my game!&#10;&#10;A solo project made by me, but not entirely possible without videos provided by Bro Code.&#10;Designing and front-end is not my forte, so yes I used LLM for CSS designs ¬_¬, But all logic of the game and mechanics were coded by me alone╰(*°▽°*)╯.&#10;&#10;                                                        I had fun and I hope you did as well!&#10;                                            Feel free to contact me or contribute to my game.&#10;                                                                           See you around!" wrapText="true">
                <font>
                   <Font name="Cooper Black" size="14.0" />
                </font>
@@ -37,12 +37,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bro Code channel: " textAlignment="RIGHT" wrappingWidth="208.669921875">
+                  <Text fill="#58bcfa" strokeType="OUTSIDE" strokeWidth="0.0" text="Bro Code channel: " textAlignment="RIGHT" wrappingWidth="208.669921875">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contribute here: " textAlignment="RIGHT" wrappingWidth="212.13671875" GridPane.rowIndex="1">
+                  <Text fill="#58bcfa" strokeType="OUTSIDE" strokeWidth="0.0" text="Contribute here: " textAlignment="RIGHT" wrappingWidth="212.13671875" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -59,7 +59,10 @@
                   </Hyperlink>
                </children>
             </GridPane>
-            <Button fx:id="return_back" layoutX="285.0" layoutY="629.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="35.0" prefWidth="130.0" text="Back" />
+            <Button fx:id="return_back" layoutX="285.0" layoutY="629.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="35.0" prefWidth="130.0" text="Back">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </children>
