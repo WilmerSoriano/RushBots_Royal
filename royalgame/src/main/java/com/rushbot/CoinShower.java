@@ -15,7 +15,7 @@ public class CoinShower {
 
     public CoinShower(Pane layer)throws NullPointerException{
         if(layer == null){
-            throw new IllegalArgumentException("Coin layer cannot be null");
+            throw new NullPointerException("Coin layer cannot be null");
         }
         
         this.layer = layer;
@@ -24,15 +24,17 @@ public class CoinShower {
         spawner.setCycleCount(Timeline.INDEFINITE); // Always spawns coins
     }
 
-    public void start()throws NullPointerException{
+    public void start(){
+        System.out.println("=== Spawning coin ===");
         spawner.play();
     }
 
     public void stop() {
+        System.out.println("=== Stop Spawning coin ===");
         spawner.stop();
     }
 
-    private void spawnCoin()throws NullPointerException{ // The NullPointer is only for coins image
+    private void spawnCoin(){ // The NullPointer is only for coins image
 
        Image coinImage = new Image(getClass().getResource("images/drop.png").toExternalForm());
        ImageView coin = new ImageView(coinImage);

@@ -28,10 +28,9 @@ public class PrimaryController {
     public void initialize() {
         try{
            coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
-           System.out.println("=== Spawning coin ===");
            coins.start();
         }
-        catch(IllegalArgumentException e){
+        catch(NullPointerException e){
            System.out.println("Coin image not found!");
         }
     }
@@ -45,7 +44,7 @@ public class PrimaryController {
     }
     public void showCredit(ActionEvent e)throws IOException{
        System.out.println("Showing credits");
-       coins.stop();
+       //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
        App.setRoot("CreditScene");
     }
     public void showSettings(ActionEvent e){
