@@ -28,6 +28,7 @@ public class PrimaryController {
     public void initialize() {
         coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
         System.out.println("=== Spawning coin ===");
+        ActionEvent someEvent = new ActionEvent();
         try{
            coins.start();
            coins.stop();
@@ -47,20 +48,7 @@ public class PrimaryController {
     public void showCredit(ActionEvent e)throws IOException{
        System.out.println("Showing credits");
        coins.stop();
-       
-       FXMLLoader fxl = new FXMLLoader(App.class.getResource("CreditScene.fxml"));
-       stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-       scene = new Scene(fxl.load());
-       scene.getStylesheets().add(App.class.getResource("css/application.css").toExternalForm());
-       stage.setScene(scene);
-        
-       stage.setResizable(false);      
-       stage.setMinWidth(700);
-       stage.setMaxWidth(700);
-       stage.setMinHeight(700);
-       stage.setMaxHeight(700);
-        
-       stage.show();
+       App.setRoot("CreditScene");
     }
     public void showSettings(ActionEvent e){
        System.out.println("Showing settings");
