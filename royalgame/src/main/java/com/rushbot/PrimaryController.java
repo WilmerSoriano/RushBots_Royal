@@ -26,14 +26,13 @@ public class PrimaryController {
 
     @FXML
     public void initialize() {
-        coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
-        System.out.println("=== Spawning coin ===");
-        ActionEvent someEvent = new ActionEvent();
         try{
+           coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
+           System.out.println("=== Spawning coin ===");
            coins.start();
         }
-        catch(NullPointerException e){
-           System.err.println("Coin image not found!");
+        catch(IllegalArgumentException e){
+           System.out.println("Coin image not found!");
         }
     }
     
@@ -61,7 +60,8 @@ public class PrimaryController {
        System.out.println("opening github");
     }
     
-    public void onReturn(ActionEvent e){
+    public void onReturn(ActionEvent e) throws IOException{
        System.out.println("Main Menu");
+       App.setRoot("MenuScene");
     }
 }

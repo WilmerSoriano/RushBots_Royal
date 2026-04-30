@@ -13,14 +13,18 @@ public class CoinShower {
     private Pane layer;
     private Timeline spawner;
 
-    public CoinShower(Pane layer) {
+    public CoinShower(Pane layer)throws NullPointerException{
+        if(layer == null){
+            throw new IllegalArgumentException("Coin layer cannot be null");
+        }
+        
         this.layer = layer;
 
         spawner = new Timeline(new KeyFrame(Duration.seconds(0.3), e -> spawnCoin()));//Every 0.3 sec spawn a coin.
         spawner.setCycleCount(Timeline.INDEFINITE); // Always spawns coins
     }
 
-    public void start() {
+    public void start()throws NullPointerException{
         spawner.play();
     }
 
@@ -28,7 +32,7 @@ public class CoinShower {
         spawner.stop();
     }
 
-    private void spawnCoin() throws NullPointerException { // The NullPointer is only for coins image
+    private void spawnCoin()throws NullPointerException{ // The NullPointer is only for coins image
 
        Image coinImage = new Image(getClass().getResource("images/drop.png").toExternalForm());
        ImageView coin = new ImageView(coinImage);
