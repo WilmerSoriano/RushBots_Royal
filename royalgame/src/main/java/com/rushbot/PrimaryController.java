@@ -12,6 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 public class PrimaryController {
    
     @FXML
@@ -52,12 +55,30 @@ public class PrimaryController {
        App.setRoot("SettingScene");
     }
     
-    public void openYoutube(ActionEvent e){
-       System.out.println("Opening YouTube!");
+    public void openYoutube(ActionEvent e)throws IOException{
+       System.out.println("Opening YouTube");
+          
+       Desktop desktop = Desktop.getDesktop();
+       
+       if (desktop.isSupported(Desktop.Action.BROWSE)){
+          desktop.browse(java.net.URI.create("https://www.youtube.com/@BroCodez"));
+       }
+       else{
+          System.out.println("WARNING: Your Environment does not support GUI to Link");
+       }
     }
 
     public void openGithub(ActionEvent e){
        System.out.println("opening github");
+            
+       Desktop desktop = Desktop.getDesktop();
+       
+       if (desktop.isSupported(Desktop.Action.BROWSE)){
+          desktop.browse(java.net.URI.create("https://github.com/WilmerSoriano/RushBots_Royal.git"));
+       }
+       else{
+          System.out.println("WARNING: Your Environment does not support GUI to Link");
+       }
     }
     
     public void onReturn(ActionEvent e) throws IOException{
