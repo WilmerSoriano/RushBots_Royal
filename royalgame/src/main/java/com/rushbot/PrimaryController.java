@@ -68,7 +68,7 @@ public class PrimaryController {
        }
     }
 
-    public void openGithub(ActionEvent e){
+    public void openGithub(ActionEvent e)throws IOException{
        System.out.println("opening github");
             
        Desktop desktop = Desktop.getDesktop();
