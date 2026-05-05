@@ -35,9 +35,9 @@
                      <font>
                         <Font name="Bell MT Bold" size="18.0" />
                      </font></Label>
-                  <ToggleButton fx:id="music_toggle" accessibleText="On" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" selected="true" styleClass="switch" text="off1" GridPane.columnIndex="1">
+                  <ToggleButton fx:id="music_toggle" accessibleText="On" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="578.0" selected="true" styleClass="switch" text="off1" GridPane.columnIndex="1">
 					<graphic>
-      						<Circle fill="white" nodeOrientation="LEFT_TO_RIGHT" radius="10" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
+      						<Circle fill="white" nodeOrientation="LEFT_TO_RIGHT" radius="10.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
 					</graphic>
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -48,19 +48,19 @@
                         <Font name="Bell MT Bold" size="18.0" />
                      </font>
                   </Label>
-                  <ToggleButton fx:id="sound_toggle" accessibleText="Off" alignment="CENTER_LEFT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" selected="true" styleClass="switch" text="On" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ToggleButton fx:id="sound_toggle" accessibleText="Off" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="503.0" selected="true" styleClass="switch" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                      <graphic>
-                        <Circle fill="white" nodeOrientation="LEFT_TO_RIGHT" radius="10" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
+                        <Circle fill="white" radius="11.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
                      </graphic></ToggleButton>
                   <Label fx:id="label_backup" prefHeight="32.0" prefWidth="287.0" text="Backup Game    " textAlignment="RIGHT" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font name="Bell MT Bold" size="18.0" />
                      </font>
                   </Label>
-                  <ToggleButton fx:id="backup_toggle" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="130.0" selected="true" styleClass="switch" text="off3" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <ToggleButton fx:id="backup_toggle" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="446.0" selected="true" styleClass="switch" text="off3" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <graphic>
                         <Circle fill="white" nodeOrientation="LEFT_TO_RIGHT" radius="10" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
                      </graphic>
