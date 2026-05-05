@@ -46,7 +46,7 @@
 }
 
 /* =========================
-   BUTTON HOVER EFFECT
+   MAIN MENU: BUTTON HOVER EFFECT
    =========================
 */
 .menu-button:hover{
@@ -59,4 +59,21 @@
     -fx-scale-y: 1.0;
 
     -fx-effect: dropshadow(gaussian, gold, 20, 0.0, 0, 0);
+}
+
+/* =========================
+   SETTING: SWITCH ANIMATION
+   =========================
+*/
+.switch {
+    -fx-background-color: #2ec4ff;
+    -fx-background-radius: 20;
+    -fx-pref-width: 75;
+    -fx-pref-height: 25;
+    -fx-padding: 3;
+}
+
+.switch:selected {
+    -fx-background-color: #ccc;
+    -fx-padding: 3 3 3 25;
 }
