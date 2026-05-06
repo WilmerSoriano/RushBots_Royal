@@ -25,6 +25,8 @@ public class PrimaryController {
     private ToggleButton music_toggle;
     @FXML
     private ToggleButton sound_toggle;
+    @FXML
+    private ToggleButton backup_toggle;
     
     private SoundControl sound;
 
@@ -55,28 +57,6 @@ public class PrimaryController {
        //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
        App.setRoot("CreditScene");
     }
-    
-    public void showSettings(ActionEvent act)throws IOException{
-       System.out.println("Showing settings");
-       App.setRoot("SettingScene");
-    }
-    public void audioToggle(ActionEvent act)throws IOException{
-       if(act.getSource() == music_toggle){
-          System.out.println("Music has been toggle");
-          SoundControl sound = new SoundControl(music_toggle);
-          sound.action();
-       }
-       else{
-          System.out.println("Sound has been toggle");
-          SoundControl sound = new SoundControl(sound_toggle);
-          sound.action();
-       }
-    }
-    
-    public void backupGame(ActionEvent act) throws IOException{
-       System.out.println("Backing up game has been swithced");
-    }
-    
     public void openLink(ActionEvent act)throws IOException{
        System.out.print("Opening Link for: ");
        String link = "";
@@ -100,6 +80,33 @@ public class PrimaryController {
        }
        catch(Exception e){
           System.out.println("WARNING: Your Environment does not support GUI to Link");
+       }
+    }
+    
+    public void showSettings(ActionEvent act)throws IOException{
+       System.out.println("Showing settings");
+       App.setRoot("SettingScene");
+    }
+    public void audioToggle(ActionEvent act)throws IOException{
+       if(act.getSource() == music_toggle){
+          System.out.println("Music has been toggle");
+          SoundControl sound = new SoundControl(music_toggle);
+          sound.action();
+       }
+       else{
+          System.out.println("Sound has been toggle");
+          SoundControl sound = new SoundControl(sound_toggle);
+          sound.action();
+       }
+    }
+    
+    public void backupGame(ActionEvent act)throws IOException{
+       System.out.println("Backing up game has been swithced");
+       if(backup_toggle.isSelected()){
+          System.out.println("On");
+       }
+       else{
+          System.out.println("Off");
        }
     }
     
