@@ -35,7 +35,7 @@
                      <font>
                         <Font name="Bell MT Bold" size="18.0" />
                      </font></Label>
-                  <ToggleButton fx:id="music_toggle" accessibleText="On" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="578.0" selected="true" styleClass="switch" text="On" GridPane.columnIndex="1">
+                  <ToggleButton fx:id="music_toggle" accessibleText="On" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#audioToggle" prefHeight="30.0" prefWidth="578.0" selected="true" styleClass="switch" text="On" GridPane.columnIndex="1">
 					<graphic>
       						<Circle fill="white" nodeOrientation="LEFT_TO_RIGHT" radius="10.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" />
 					</graphic>
@@ -48,7 +48,7 @@
                         <Font name="Bell MT Bold" size="18.0" />
                      </font>
                   </Label>
-                  <ToggleButton fx:id="sound_toggle" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="30.0" prefWidth="503.0" selected="true" styleClass="switch" text="On" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ToggleButton fx:id="sound_toggle" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#audioToggle" prefHeight="30.0" prefWidth="503.0" selected="true" styleClass="switch" text="On" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
