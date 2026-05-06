@@ -55,18 +55,20 @@ public class PrimaryController {
        //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
        App.setRoot("CreditScene");
     }
+    
     public void showSettings(ActionEvent act)throws IOException{
        System.out.println("Showing settings");
        App.setRoot("SettingScene");
-       
-       if((music_toggle.isSelected())){
+    }
+    public void audioToggle(ActionEvent act)throws IOException{
+       if(act.getSource() == music_toggle){
           System.out.println("Music has been toggle");
           SoundControl sound = new SoundControl(music_toggle);
           sound.action();
        }
        else{
           System.out.println("Sound has been toggle");
-          SoundControl sound = new SoundControl(music_toggle);
+          SoundControl sound = new SoundControl(sound_toggle);
           sound.action();
        }
     }
@@ -93,7 +95,7 @@ public class PrimaryController {
              desktop.browse(java.net.URI.create(link));
           }
           else{
-             System.out.print("WARNING: Your Environment does not support GUI to Link");
+             System.out.print("Gdk-WARNING: Your Environment does not support GUI to Link");
           }
        }
        catch(Exception e){
