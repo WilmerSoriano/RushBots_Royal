@@ -66,7 +66,7 @@
    =========================
 */
 .switch {
-    -fx-background-color: #2ec4ff;
+    -fx-background-color: #ccc;
     -fx-background-radius: 20;
     -fx-pref-width: 75;
     -fx-pref-height: 25;
@@ -74,6 +74,6 @@
 }
 
 .switch:selected {
-    -fx-background-color: #ccc;
+    -fx-background-color: #2ec4ff;
     -fx-padding: 3 3 3 25;
 }
