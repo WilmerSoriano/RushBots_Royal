@@ -5,12 +5,8 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
-
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.ToggleButton;
 
 import java.awt.Desktop;
 import java.net.URI;
@@ -21,18 +17,19 @@ public class PrimaryController {
     private Pane coinLayer; // Loads the coin layer from fxml file
     
     @FXML
+    private Hyperlink web_github;
+    @FXML
+    private Hyperlink web_youtube;
+    
+    @FXML
     private ToggleButton music_toggle;
+    @FXML
     private ToggleButton sound_toggle;
     
-    private SoundControl control;
+    private SoundControl sound;
 
     private CoinShower coins;
     
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    
-
     @FXML
     public void initialize() {
         try{
@@ -45,64 +42,66 @@ public class PrimaryController {
     }
     
     // The ActionEvent is communicated via fxml file with onAction call
-    public void startGame(ActionEvent e){
+    public void startGame(ActionEvent act){
        System.out.println("Starting Game!");
     }
     
-    public void loadGame(ActionEvent e){
+    public void loadGame(ActionEvent act){
        System.out.println("Loading Game!");
     }
     
-    public void showCredit(ActionEvent e)throws IOException{
+    public void showCredit(ActionEvent act)throws IOException{
        System.out.println("Showing credits");
        //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
        App.setRoot("CreditScene");
     }
-    public void showSettings(ActionEvent e)throws IOException{
+    public void showSettings(ActionEvent act)throws IOException{
        System.out.println("Showing settings");
        App.setRoot("SettingScene");
        
        if((music_toggle.isSelected())){
           System.out.println("Music has been toggle");
-          control(music_toggle);
+          SoundControl sound = new SoundControl(music_toggle);
+          sound.action();
        }
        else{
           System.out.println("Sound has been toggle");
-          control(sound_toggle);
+          SoundControl sound = new SoundControl(music_toggle);
+          sound.action();
        }
     }
     
-    public void backupGame(ActionEvent e) throws IOException{
+    public void backupGame(ActionEvent act) throws IOException{
        System.out.println("Backing up game has been swithced");
     }
     
-    public void openYoutube(ActionEvent e)throws IOException{
-       System.out.println("Opening YouTube");
-          
-       Desktop desktop = Desktop.getDesktop();
+    public void openLink(ActionEvent act)throws IOException{
+       System.out.print("Opening Link for: ");
+       String link = "";
        
-       if (desktop.isSupported(Desktop.Action.BROWSE)){
-          desktop.browse(java.net.URI.create("https://www.youtube.com/@BroCodez"));
+       if(act.getSource() == web_youtube){
+          link =  "https://www.youtube.com/@BroCodez";
        }
        else{
-          System.out.println("WARNING: Your Environment does not support GUI to Link");
+          link = "https://github.com/WilmerSoriano/RushBots_Royal.git";
        }
-    }
-
-    public void openGithub(ActionEvent e)throws IOException{
-       System.out.println("opening github");
-            
-       Desktop desktop = Desktop.getDesktop();
+       System.out.println(link);
        
-       if (desktop.isSupported(Desktop.Action.BROWSE)){
-          desktop.browse(java.net.URI.create("https://github.com/WilmerSoriano/RushBots_Royal.git"));
+       try{
+          Desktop desktop = Desktop.getDesktop();
+          if (desktop.isSupported(Desktop.Action.BROWSE)){
+             desktop.browse(java.net.URI.create(link));
+          }
+          else{
+             System.out.print("WARNING: Your Environment does not support GUI to Link");
+          }
        }
-       else{
+       catch(Exception e){
           System.out.println("WARNING: Your Environment does not support GUI to Link");
        }
     }
     
-    public void onReturn(ActionEvent e)throws IOException{
+    public void onReturn(ActionEvent act)throws IOException{
        System.out.println("Main Menu");
        App.setRoot("MenuScene");
     }

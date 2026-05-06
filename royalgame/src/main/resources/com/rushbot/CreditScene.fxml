@@ -47,12 +47,12 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Hyperlink fx:id="web_youtube" onAction="#openYoutube" prefHeight="23.0" prefWidth="492.0" text="https://www.youtube.com/@BroCodez" underline="true" GridPane.columnIndex="1">
+                  <Hyperlink fx:id="web_youtube" onAction="#openLink" prefHeight="23.0" prefWidth="492.0" text="https://www.youtube.com/@BroCodez" underline="true" GridPane.columnIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Hyperlink>
-                  <Hyperlink fx:id="web_github" onAction="#openGithub" prefHeight="23.0" prefWidth="537.0" text="My GitHub Repository" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Hyperlink fx:id="web_github" onAction="#openLink" prefHeight="23.0" prefWidth="537.0" text="My GitHub Repository" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
