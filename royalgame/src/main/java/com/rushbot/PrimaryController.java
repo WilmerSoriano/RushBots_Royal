@@ -19,6 +19,12 @@ public class PrimaryController {
    
     @FXML
     private Pane coinLayer; // Loads the coin layer from fxml file
+    
+    @FXML
+    private ToggleButton music_toggle;
+    private ToggleButton sound_toggle;
+    
+    private SoundControl control;
 
     private CoinShower coins;
     
@@ -42,9 +48,11 @@ public class PrimaryController {
     public void startGame(ActionEvent e){
        System.out.println("Starting Game!");
     }
+    
     public void loadGame(ActionEvent e){
        System.out.println("Loading Game!");
     }
+    
     public void showCredit(ActionEvent e)throws IOException{
        System.out.println("Showing credits");
        //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
@@ -53,6 +61,19 @@ public class PrimaryController {
     public void showSettings(ActionEvent e)throws IOException{
        System.out.println("Showing settings");
        App.setRoot("SettingScene");
+       
+       if((music_toggle.isSelected())){
+          System.out.println("Music has been toggle");
+          control(music_toggle);
+       }
+       else{
+          System.out.println("Sound has been toggle");
+          control(sound_toggle);
+       }
+    }
+    
+    public void backupGame(ActionEvent e) throws IOException{
+       System.out.println("Backing up game has been swithced");
     }
     
     public void openYoutube(ActionEvent e)throws IOException{
@@ -81,7 +102,7 @@ public class PrimaryController {
        }
     }
     
-    public void onReturn(ActionEvent e) throws IOException{
+    public void onReturn(ActionEvent e)throws IOException{
        System.out.println("Main Menu");
        App.setRoot("MenuScene");
     }
