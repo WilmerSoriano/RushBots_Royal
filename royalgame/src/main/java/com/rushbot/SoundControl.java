@@ -1,5 +1,6 @@
 package com.rushbot;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.ToggleButton;
 
 public class SoundControl {
@@ -11,15 +12,13 @@ public class SoundControl {
             throw new NullPointerException("Audio not found!");
         }
         this.button = button;
-
-        action(button);
     }
 
-    public void action(ToggleButton tb){
-        if((button.isSelected()) == False){
+    public void action(){
+        if((button.isSelected()) == false){
             System.out.println("Turn off");
         }else{
-            System.our.println("Turn on");
+            System.out.println("Turn on");
         }
 
     } 
