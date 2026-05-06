@@ -16,6 +16,9 @@ public class SoundControl {
 
     public void action(){
         if((button.isSelected()) == false){
+            /*
+                A function that: Method(On or Off, Music.mp3 or SoundEffect.mp3)
+            */
             System.out.println("Turn off");
         }else{
             System.out.println("Turn on");
