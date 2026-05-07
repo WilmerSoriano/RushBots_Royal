@@ -7,13 +7,14 @@ import javafx.scene.control.ToggleButton;
     CORE IDEA:
     A function that => Method(On or Off, Music.mp3 or SoundEffect.mp3)
     LIST:
-    * Basic Music 
+    * Basic Music [*got it]
     ==============Sound Effect audio========= 
-    * Audio for clicking effect (when clicking back, or switching audio on or off )
-    * Winner audio
-    * Loser audio
-    * Selection Audio + with select audio confirming the click
-    Total: 6 Audio with 4 belonging to sound effect controlling it
+    * Audio for clicking effect (when clicking back, or switching audio on or off ) [*got it]
+    * Done Audio [*got it]
+    * Winner audio [*got it]
+    * Loser audio [*got it]
+    * Selection Audio + with select audio confirming the click [*got it]
+    Total: 6 Audio with 5 belonging to sound effect controlling it
 */
 
 public class SoundControl {
