@@ -2,6 +2,8 @@ package com.rushbot;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 /*
     CORE IDEA:
@@ -19,21 +21,47 @@ import javafx.scene.control.ToggleButton;
 
 public class SoundControl {
     @FXML
-    private ToggleButton button;
+    private ToggleButton someButton;
 
-    public SoundControl(ToggleButton button)throws NullPointerException{
+    private MediaPlayer mediaPlayer;
+    private MediaPlayer audioPlayer;
+    
+    private String[] soundPlaylist = {"click.mp3", "done.mp3", "lost.mp3", "select.mp3", "winner.mp3"}; // Not including Main Music since it can be individually be toggled off
+
+    public SoundControl(ToggleButton someButton)throws NullPointerException{
         if(button == null){
-            throw new NullPointerException("Audio not found!");
+            throw new NullPointerException("No button found");
         }
-        this.button = button;
+        this.someButton = someButton;
     }
 
-    public void action(){
-        if((button.isSelected()) == false){
-            System.out.println("Turn off");
-        }else{
-            System.out.println("Turn on");
-        }
+    private void setAudio(){
+        String audioControl = someButton.getId();
 
-    } 
+        if(audioPlayer == "music_toggle"){
+            Media media = new Media("MainMusic.mp3");
+            audioPlayer = new MediaPlayer(media);
+            controlAudio(someButton.isSelected());
+        }
+        else{
+            System.out.println("Sound is turn off or on");
+        }
+    }
+    
+    private void controlAudio(Boolean state){
+        if(state == false){
+            audioPlayer.stop();
+        }
+        else{
+            audioPlayer.play();
+        }
+    }
+
+    public void initialize(){
+        /* Replay Main Music as needed until user decide to switch off*/
+        Media media = new Media("MainMusic.mp3");
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
+        mediaPlayer.setAutoPlay();
+    }
 }
