@@ -28,14 +28,16 @@ public class PrimaryController {
     @FXML
     private ToggleButton backup_toggle;
     
-    private SoundControl sound;
+    private SoundControl bgMusic;
+    private SoundControl soundEffect;
 
     private CoinShower coins;
     
     @FXML
     public void initialize() {
-       //sound = new SoundControl(music_toggle);
-       //sound.init();
+       bgMusic = new SoundControl("MainMusic.mp3");
+       bgMusic.initAudio();
+       bgMusic.checkAudio();
         try{
            coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
            coins.start();
@@ -92,13 +94,11 @@ public class PrimaryController {
     public void audioToggle(ActionEvent act)throws IOException{
        if(act.getSource() == music_toggle){
           System.out.println("Music has been toggle");
-          SoundControl sound = new SoundControl(music_toggle);
-          sound.setAudio();
+          bgMusic.controlAudio(music_toggle);
+          bgMusic.checkAudio();
        }
        else{
           System.out.println("Sound effect has been toggle");
-          SoundControl sound = new SoundControl(sound_toggle);
-          sound.setAudio();
        }
     }
     
