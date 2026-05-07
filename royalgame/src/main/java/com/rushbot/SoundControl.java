@@ -38,8 +38,8 @@ public class SoundControl {
     public void setAudio(){
         String audioControl = someButton.getId();
 
-        if(audioControl == "music_toggle"){
-            Media media = new Media("MainMusic.mp3");
+        if(audioControl.equals("music_toggle")){
+            Media media = new Media(getClass().getResource("music/MainMusic.mp3").toExternalForm());
             audioPlayer = new MediaPlayer(media);
             controlAudio(someButton.isSelected());
         }
@@ -57,11 +57,11 @@ public class SoundControl {
         }
     }
 
-    public void initialize(){
+    public void init(){
         /* Replay Main Music as needed until user decide to switch off*/
-        Media media = new Media("MainMusic.mp3");
+        Media media = new Media(getClass().getResource("music/MainMusic.mp3").toExternalForm());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
-        mediaPlayer.setAutoPlay();
+        mediaPlayer.setAutoPlay(true);
     }
 }

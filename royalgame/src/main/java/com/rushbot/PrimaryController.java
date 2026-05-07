@@ -34,8 +34,8 @@ public class PrimaryController {
     
     @FXML
     public void initialize() {
-       sound = new SoundControl(music_toggle);
-       sound.initialize();
+       //sound = new SoundControl(music_toggle);
+       //sound.init();
         try{
            coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
            coins.start();
@@ -96,7 +96,7 @@ public class PrimaryController {
           sound.setAudio();
        }
        else{
-          System.out.println("Sound has been toggle");
+          System.out.println("Sound effect has been toggle");
           SoundControl sound = new SoundControl(sound_toggle);
           sound.setAudio();
        }
