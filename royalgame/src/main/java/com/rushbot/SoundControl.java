@@ -29,22 +29,22 @@ public class SoundControl {
     private String[] soundPlaylist = {"click.mp3", "done.mp3", "lost.mp3", "select.mp3", "winner.mp3"}; // Not including Main Music since it can be individually be toggled off
 
     public SoundControl(ToggleButton someButton)throws NullPointerException{
-        if(button == null){
+        if(someButton == null){
             throw new NullPointerException("No button found");
         }
         this.someButton = someButton;
     }
 
-    private void setAudio(){
+    public void setAudio(){
         String audioControl = someButton.getId();
 
-        if(audioPlayer == "music_toggle"){
+        if(audioControl == "music_toggle"){
             Media media = new Media("MainMusic.mp3");
             audioPlayer = new MediaPlayer(media);
             controlAudio(someButton.isSelected());
         }
         else{
-            System.out.println("Sound is turn off or on");
+            System.out.println("Sound effect is turn off or on here");
         }
     }
     
