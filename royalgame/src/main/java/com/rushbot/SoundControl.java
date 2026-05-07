@@ -24,44 +24,35 @@ public class SoundControl {
     private ToggleButton someButton;
 
     private MediaPlayer mediaPlayer;
-    private MediaPlayer audioPlayer;
     
-    private String[] soundPlaylist = {"click.mp3", "done.mp3", "lost.mp3", "select.mp3", "winner.mp3"}; // Not including Main Music since it can be individually be toggled off
+    private String mp3Sound;
+    
+    private Boolean state = true;
 
-    public SoundControl(ToggleButton someButton)throws NullPointerException{
-        if(someButton == null){
-            throw new NullPointerException("No button found");
-        }
-        this.someButton = someButton;
-    }
-
-    public void setAudio(){
-        String audioControl = someButton.getId();
-
-        if(audioControl.equals("music_toggle")){
-            Media media = new Media(getClass().getResource("music/MainMusic.mp3").toExternalForm());
-            audioPlayer = new MediaPlayer(media);
-            controlAudio(someButton.isSelected());
-        }
-        else{
-            System.out.println("Sound effect is turn off or on here");
-        }
+    public SoundControl(String mp3Sound){
+        this.mp3Sound = mp3Sound;
     }
     
-    private void controlAudio(Boolean state){
+    public void controlAudio(ToggleButton someButton){
+       state = someButton.isSelected();
+    }
+    
+    public void checkAudio(){
         if(state == false){
-            audioPlayer.stop();
+            mediaPlayer.stop();
         }
         else{
-            audioPlayer.play();
+            mediaPlayer.play();
         }
     }
 
-    public void init(){
-        /* Replay Main Music as needed until user decide to switch off*/
-        Media media = new Media(getClass().getResource("music/MainMusic.mp3").toExternalForm());
+    public void initAudio(){
+        Media media = new Media(getClass().getResource("music/"+mp3Sound).toExternalForm());
         mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.play();
-        mediaPlayer.setAutoPlay(true);
+        
+        /* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
+        if(mp3Sound.equals("MainMusic.mp3")){
+           mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        }
     }
 }
