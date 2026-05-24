@@ -23,7 +23,7 @@ public class SoundControl {
     @FXML
     private ToggleButton someButton;
 
-    private MediaPlayer mediaPlayer;
+    private static MediaPlayer mediaPlayer; // Made this static to make sure only 1 background music is played.
     
     private String mp3Sound;
     
@@ -47,12 +47,18 @@ public class SoundControl {
     }
 
     public void initAudio(){
+        // Prevent creating another player if already playing
+        if(mediaPlayer != null) {
+            return;
+        }
+        
         Media media = new Media(getClass().getResource("music/"+mp3Sound).toExternalForm());
         mediaPlayer = new MediaPlayer(media);
         
         /* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
         if(mp3Sound.equals("MainMusic.mp3")){
            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+           mediaPlayer.play();
         }
     }
 }

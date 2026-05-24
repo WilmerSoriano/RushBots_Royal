@@ -37,7 +37,6 @@ public class PrimaryController {
     public void initialize() {
        bgMusic = new SoundControl("MainMusic.mp3");
        bgMusic.initAudio();
-       bgMusic.checkAudio();
         try{
            coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
            coins.start();
