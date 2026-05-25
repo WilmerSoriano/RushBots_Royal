@@ -20,6 +20,8 @@ import javafx.scene.media.MediaPlayer;
 */
 
 public class AudioManager{
+   
+    private static Boolean toggle;
 
     private static MediaPlayer bgMusic; // Made these static to make sure only 1 audio is played.
     private static MediaPlayer clickSE;
@@ -30,11 +32,12 @@ public class AudioManager{
 
     public AudioManager(){
        initBg();
-       clickSE = init("click.mp3");
-       doneSE = init("done.mp3");
-       lostSE = init("lost.mp3");
-       selectSE = init("select.mp3");
-       winnerSE = init("winner.mp3");
+       this.clickSE = init("click.mp3");
+       this.doneSE = init("done.mp3");
+       this.lostSE = init("lost.mp3");
+       this.selectSE = init("select.mp3");
+       this.winnerSE = init("winner.mp3");
+       this.toggle = true;
     }
     
     public MediaPlayer init(String mediaName){
@@ -53,11 +56,25 @@ public class AudioManager{
     }
     
     public void controlMusic(ToggleButton button){
-       if(button.isSelected()){
+       if(!button.isSelected()){
           bgMusic.stop();
        }
        else{
           bgMusic.play();
+       }
+    }
+    
+    // the toggle is the flag that controls all the sound effect for either on or off
+    public void controlSFX(ToggleButton button){
+       this.toggle = button.isSelected();
+    }
+    
+    public void clickSFX(){
+       if(toggle){
+          clickSE.play();
+       }
+       else{
+          clickSE.stop();
        }
     }
 }

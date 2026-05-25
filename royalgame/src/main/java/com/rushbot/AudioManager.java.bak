@@ -20,6 +20,8 @@ import javafx.scene.media.MediaPlayer;
 */
 
 public class AudioManager{
+   
+    private static Boolean toggle = true;
 
     private static MediaPlayer bgMusic; // Made these static to make sure only 1 audio is played.
     private static MediaPlayer clickSE;
@@ -29,16 +31,31 @@ public class AudioManager{
     private static MediaPlayer winnerSE;
 
     public AudioManager(){
-       bgMusic = initBg("MainMusic.mp3");
-       clickSE = init("click.mp3");
-       doneSE = init("done.mp3");
-       lostSE = init("lost.mp3");
-       selectSE = init("select.mp3");
-       winnerSE = init("winner.mp3");
+       initBg();
+       this.clickSE = init("click.mp3");
+       this.doneSE = init("done.mp3");
+       this.lostSE = init("lost.mp3");
+       this.selectSE = init("select.mp3");
+       this.winnerSE = init("winner.mp3");
+    }
+    
+    public MediaPlayer init(String mediaName){
+       Media media = new Media(getClass().getResource("music/"+mediaName).toExternalForm());
+       return new MediaPlayer(media);
+    }
+    
+    public void initBg(){
+       if(bgMusic != null)
+          return;
+       
+       Media media = new Media(getClass().getResource("music/MainMusic.mp3").toExternalForm());
+       bgMusic = new MediaPlayer(media);
+       bgMusic.setCycleCount(MediaPlayer.INDEFINITE);/* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
+       bgMusic.play();
     }
     
     public void controlMusic(ToggleButton button){
-       if(button.isSelected()){
+       if(!button.isSelected()){
           bgMusic.stop();
        }
        else{
@@ -46,23 +63,17 @@ public class AudioManager{
        }
     }
     
-    public void checkAudio(){
-        if(state == false){
-            bgMusic.stop();
-        }
-        else{
-            bgMusic.play();
-        }
-    }
-    public MediaPlayer init(String mediaName){
-       Media media = new Media(getClass().getResource("music/"+mediaName).toExternalForm());
-       return new MediaPlayer(media);
+    // the toggle is the flag that controls all the sound effect for either on or off
+    public void controlSFX(ToggleButton button){
+       this.toggle = button.isSelected();
     }
     
-    public MediaPlayer initBg(String mediaName){
-       Media media = new Media(getClass().getResource("music/"+mediaName).toExternalForm());
-       bgMusic = new MediaPlayer(media);
-       bgMusic.setCycleCount(MediaPlayer.INDEFINITE);/* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
-       bgMusic.play();
+    public void clickSFX(){
+       if(toggle){
+          clickSE.play();
+       }
+       else{
+          clickSE.stop();
+       }
     }
 }

@@ -18,28 +18,26 @@ public class PrimaryController {
     
     @FXML
     private Hyperlink web_github;
+    
     @FXML
     private Hyperlink web_youtube;
     
     @FXML
     private ToggleButton music_toggle;
+    
     @FXML
     private ToggleButton sound_toggle;
+    
     @FXML
     private ToggleButton backup_toggle;
     
-    private SoundControl bgMusic;
-    private SoundControl click_ef;
-    private SoundControl soundEffect;
+    private AudioManager dj;
 
     private CoinShower coins;
     
     @FXML
     public void initialize() {
-       bgMusic = new SoundControl("MainMusic.mp3");
-       click_ef = new SoundControl("click.mp3");
-       bgMusic.initAudio();
-       click_ef.initAudio();
+       dj = new AudioManager();
         try{
            coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
            coins.start();
@@ -51,7 +49,7 @@ public class PrimaryController {
     
     // The ActionEvent is communicated via fxml file with onAction call
     public void startGame(ActionEvent act){
-       //click_ef.checkSeAudio();
+       dj.clickSFX();
        System.out.println("Starting Game!");
     }
     
@@ -100,11 +98,11 @@ public class PrimaryController {
     public void audioToggle(ActionEvent act)throws IOException{
        if(act.getSource() == music_toggle){
           System.out.println("Music has been toggle");
-          bgMusic.controlAudio(music_toggle);
-          bgMusic.checkBgAudio();
+          dj.controlMusic(music_toggle);
        }
        else{
           System.out.println("Sound effect has been toggle");
+          dj.controlSFX(sound_toggle);
        }
     }
     
