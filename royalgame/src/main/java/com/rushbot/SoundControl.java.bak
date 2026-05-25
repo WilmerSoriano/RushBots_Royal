@@ -58,7 +58,7 @@ public class SoundControl {
 
     public void initAudio(){
         // Prevent creating another media player if already playing
-        if(bgMusic != null || soundEffect != null)
+        if(bgMusic != null)
             return;
         
         Media media = new Media(getClass().getResource("music/"+mp3Sound).toExternalForm());

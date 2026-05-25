@@ -20,10 +20,6 @@ import javafx.scene.media.MediaPlayer;
 */
 
 public class AudioManager{
-    @FXML
-    private ToggleButton someButton;
-    
-    private Boolean state = true;
 
     private static MediaPlayer bgMusic; // Made these static to make sure only 1 audio is played.
     private static MediaPlayer clickSE;
@@ -33,49 +29,35 @@ public class AudioManager{
     private static MediaPlayer winnerSE;
 
     public AudioManager(){
-       bgMusic = init("MainMusic.mp3");
-    }
-    
-    public void controlAudio(ToggleButton someButton){
-       state = someButton.isSelected();
-    }
-    
-    public void checkAudio(){
-        if(state == false){
-            bgMusic.stop();
-        }
-        else{
-            bgMusic.play();
-        }
-    }
-    
-    public void init(String mp3Sound){
-        // Prevent creating another media player if already playing
-        if(bgMusic != null)
-            return;
-        
-        Media media = new Media(getClass().getResource("music/"+mp3Sound).toExternalForm());
-        
-        if(mp3Sound.equals("MainMusic.mp3")){
-           bgMusic = new MediaPlayer(media);
-           bgMusic.setCycleCount(MediaPlayer.INDEFINITE);/* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
-           bgMusic.play();
-        }
-        else{
-           soundEffect = new MediaPlayer(media);
-        }
+       initBg();
+       clickSE = init("click.mp3");
+       doneSE = init("done.mp3");
+       lostSE = init("lost.mp3");
+       selectSE = init("select.mp3");
+       winnerSE = init("winner.mp3");
     }
     
     public MediaPlayer init(String mediaName){
        Media media = new Media(getClass().getResource("music/"+mediaName).toExternalForm());
-               
-        if(mediaName.equals("MainMusic.mp3")){
-           bgMusic = new MediaPlayer(media);
-           bgMusic.setCycleCount(MediaPlayer.INDEFINITE);/* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
-           bgMusic.play();
-        }
-        else{
-           mediaName = new MediaPlayer(media);
-        }
+       return new MediaPlayer(media);
+    }
+    
+    public void initBg(){
+       if(bgMusic != null)
+          return;
+       
+       Media media = new Media(getClass().getResource("music/MainMusic.mp3").toExternalForm());
+       bgMusic = new MediaPlayer(media);
+       bgMusic.setCycleCount(MediaPlayer.INDEFINITE);/* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
+       bgMusic.play();
+    }
+    
+    public void controlMusic(ToggleButton button){
+       if(button.isSelected()){
+          bgMusic.stop();
+       }
+       else{
+          bgMusic.play();
+       }
     }
 }

@@ -34,8 +34,13 @@ public class SoundControl {
         this.mp3Sound = mp3Sound;
     }
     
-    public void controlAudio(ToggleButton someButton){
-       state = someButton.isSelected();
+    public void controlMusic(ToggleButton someButton){
+       if(someButton.isSelected()){
+          bgMusic.stop();
+       }
+       else{
+          bgMusic.play();
+       }
     }
     
     public void checkBgAudio(){
