@@ -29,6 +29,7 @@ public class PrimaryController {
     private ToggleButton backup_toggle;
     
     private SoundControl bgMusic;
+    private SoundControl click_ef;
     private SoundControl soundEffect;
 
     private CoinShower coins;
@@ -36,7 +37,9 @@ public class PrimaryController {
     @FXML
     public void initialize() {
        bgMusic = new SoundControl("MainMusic.mp3");
+       click_ef = new SoundControl("click.mp3");
        bgMusic.initAudio();
+       click_ef.initAudio();
         try{
            coins = new CoinShower(coinLayer); // setting the coinlayer pane as background. NOT menuLayer
            coins.start();
@@ -48,14 +51,17 @@ public class PrimaryController {
     
     // The ActionEvent is communicated via fxml file with onAction call
     public void startGame(ActionEvent act){
+       //click_ef.checkSeAudio();
        System.out.println("Starting Game!");
     }
     
     public void loadGame(ActionEvent act){
+       //click_ef.checkSeAudio();
        System.out.println("Loading Game!");
     }
     
     public void showCredit(ActionEvent act)throws IOException{
+       //click_ef.checkSeAudio();
        System.out.println("Showing credits");
        //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
        App.setRoot("CreditScene");
@@ -87,6 +93,7 @@ public class PrimaryController {
     }
     
     public void showSettings(ActionEvent act)throws IOException{
+       //click_ef.checkSeAudio();
        System.out.println("Showing settings");
        App.setRoot("SettingScene");
     }
@@ -94,7 +101,7 @@ public class PrimaryController {
        if(act.getSource() == music_toggle){
           System.out.println("Music has been toggle");
           bgMusic.controlAudio(music_toggle);
-          bgMusic.checkAudio();
+          bgMusic.checkBgAudio();
        }
        else{
           System.out.println("Sound effect has been toggle");
@@ -112,6 +119,7 @@ public class PrimaryController {
     }
     
     public void onReturn(ActionEvent act)throws IOException{
+       //click_ef.checkSeAudio();
        System.out.println("Main Menu");
        App.setRoot("MenuScene");
     }

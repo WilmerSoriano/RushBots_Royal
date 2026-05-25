@@ -23,7 +23,8 @@ public class SoundControl {
     @FXML
     private ToggleButton someButton;
 
-    private static MediaPlayer mediaPlayer; // Made this static to make sure only 1 background music is played.
+    private static MediaPlayer bgMusic; // Made this static to make sure only 1 background music is played.
+    private static MediaPlayer soundEffect;
     
     private String mp3Sound;
     
@@ -37,28 +38,38 @@ public class SoundControl {
        state = someButton.isSelected();
     }
     
-    public void checkAudio(){
+    public void checkBgAudio(){
         if(state == false){
-            mediaPlayer.stop();
+            bgMusic.stop();
         }
         else{
-            mediaPlayer.play();
+            bgMusic.play();
+        }
+    }
+    
+    public void checkSeAudio(){
+        if(state == false){
+            soundEffect.stop();
+        }
+        else{
+            soundEffect.play();
         }
     }
 
     public void initAudio(){
-        // Prevent creating another player if already playing
-        if(mediaPlayer != null) {
+        // Prevent creating another media player if already playing
+        if(bgMusic != null)
             return;
-        }
         
         Media media = new Media(getClass().getResource("music/"+mp3Sound).toExternalForm());
-        mediaPlayer = new MediaPlayer(media);
         
-        /* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
         if(mp3Sound.equals("MainMusic.mp3")){
-           mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-           mediaPlayer.play();
+           bgMusic = new MediaPlayer(media);
+           bgMusic.setCycleCount(MediaPlayer.INDEFINITE);/* ONLY Main Music get to be replayed as needed until user decide to toggle off*/
+           bgMusic.play();
+        }
+        else{
+           soundEffect = new MediaPlayer(media);
         }
     }
 }
