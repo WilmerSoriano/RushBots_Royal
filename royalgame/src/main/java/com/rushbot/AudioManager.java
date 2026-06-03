@@ -41,9 +41,9 @@ public class AudioManager{
        this.toggle = true;
     }
     
-    public AudioClip init(String mediaName){
-       AudioClip audio = new AudioClip(getClass().getResource("music/"+mediaName).toExternalForm());
-       return new AudioClip(audio);
+    public AudioClip init(String audioName){
+       AudioClip audio = new AudioClip(getClass().getResource("music/"+audioName).toExternalForm());
+       return audio;
     }
     
     public void initBg(){
