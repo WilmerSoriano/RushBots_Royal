@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.AudioClip;
 
 /*
     CORE IDEA:
@@ -21,10 +22,10 @@ import javafx.scene.media.MediaPlayer;
 
 public class AudioManager{
    
-    private static Boolean toggle = true;
+    private static Boolean toggle;
 
     private static MediaPlayer bgMusic; // Made these static to make sure only 1 audio is played.
-    private static MediaPlayer clickSE;
+    private static AudioClip clickSE;
     private static MediaPlayer doneSE;
     private static MediaPlayer lostSE;
     private static MediaPlayer selectSE;
@@ -32,11 +33,13 @@ public class AudioManager{
 
     public AudioManager(){
        initBg();
-       this.clickSE = init("click.mp3");
+       clickSE = new AudioClip(getClass().getResource("music/click.mp3").toExternalForm())
+       //this.clickSE = init("click.mp3");
        this.doneSE = init("done.mp3");
        this.lostSE = init("lost.mp3");
        this.selectSE = init("select.mp3");
        this.winnerSE = init("winner.mp3");
+       this.toggle = true;
     }
     
     public MediaPlayer init(String mediaName){
@@ -71,6 +74,7 @@ public class AudioManager{
     public void clickSFX(){
        if(toggle){
           clickSE.play();
+          //clickSE.setOnEndOfMedia(clickSE::dispose); // Resets the sound effect player after use.
        }
        else{
           clickSE.stop();
