@@ -26,15 +26,14 @@ public class AudioManager{
 
     private static MediaPlayer bgMusic; // Made these static to make sure only 1 audio is played.
     private static AudioClip clickSE;
-    private static MediaPlayer doneSE;
-    private static MediaPlayer lostSE;
-    private static MediaPlayer selectSE;
-    private static MediaPlayer winnerSE;
+    private static AudioClip doneSE;
+    private static AudioClip lostSE;
+    private static AudioClip selectSE;
+    private static AudioClip winnerSE;
 
     public AudioManager(){
        initBg();
-       clickSE = new AudioClip(getClass().getResource("music/click.mp3").toExternalForm());
-       //this.clickSE = init("click.mp3");
+       this.clickSE = init("click.mp3");
        this.doneSE = init("done.mp3");
        this.lostSE = init("lost.mp3");
        this.selectSE = init("select.mp3");
@@ -42,9 +41,9 @@ public class AudioManager{
        this.toggle = true;
     }
     
-    public MediaPlayer init(String mediaName){
-       Media media = new Media(getClass().getResource("music/"+mediaName).toExternalForm());
-       return new MediaPlayer(media);
+    public AudioClip init(String mediaName){
+       AudioClip audio = new AudioClip(getClass().getResource("music/"+mediaName).toExternalForm());
+       return new AudioClip(audio);
     }
     
     public void initBg(){
@@ -74,7 +73,6 @@ public class AudioManager{
     public void clickSFX(){
        if(toggle){
           clickSE.play();
-          //clickSE.setOnEndOfMedia(clickSE::dispose); // Resets the sound effect player after use.
        }
        else{
           clickSE.stop();

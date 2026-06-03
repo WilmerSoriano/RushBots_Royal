@@ -33,8 +33,7 @@ public class AudioManager{
 
     public AudioManager(){
        initBg();
-       clickSE = new AudioClip(getClass().getResource("music/click.mp3").toExternalForm())
-       //this.clickSE = init("click.mp3");
+       this.clickSE = init("click.mp3");
        this.doneSE = init("done.mp3");
        this.lostSE = init("lost.mp3");
        this.selectSE = init("select.mp3");
@@ -43,8 +42,8 @@ public class AudioManager{
     }
     
     public MediaPlayer init(String mediaName){
-       Media media = new Media(getClass().getResource("music/"+mediaName).toExternalForm());
-       return new MediaPlayer(media);
+       AudioClip audio = new AudioClip(getClass().getResource("music/"+mediaName).toExternalForm());
+       return new AudioClip(audio);
     }
     
     public void initBg(){
