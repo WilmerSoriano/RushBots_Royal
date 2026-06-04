@@ -38,7 +38,6 @@ public class AudioManager{
        this.lostSE = init("lost.mp3");
        this.selectSE = init("select.mp3");
        this.winnerSE = init("winner.mp3");
-       //this.toggle = true;
     }
     
     public AudioClip init(String audioName){
@@ -75,4 +74,28 @@ public class AudioManager{
           clickSE.play();
        }
     }
+    
+    public void doneSFX() {
+       if (toggle) {
+           doneSE.play();
+       }
+   }
+
+   public void lostSFX() {
+       if (toggle) {
+           lostSE.play();
+       }
+   }
+
+   public void selectSFX() {
+       if (toggle) {
+           selectSE.play();
+       }
+   }
+
+   public void winnerSFX() {
+       if (toggle) {
+           winnerSE.play();
+       }
+   }
 }
