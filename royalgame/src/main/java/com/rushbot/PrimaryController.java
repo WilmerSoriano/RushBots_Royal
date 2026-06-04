@@ -98,6 +98,16 @@ public class PrimaryController {
     }
     public void audioToggle(ActionEvent act)throws IOException{
        dj.clickSFX();
+       
+       // This Section is handling the button to display On and Off for toggle button
+       ToggleButton toggle = (ToggleButton) act.getSource();
+       if (toggle.isSelected()) {
+           toggle.setText("On");
+       } else {
+           toggle.setText("Off");
+       }
+       
+       // This Section actually handles the settings for Audio.
        if(act.getSource() == music_toggle){
           System.out.println("Music has been toggle");
           dj.controlMusic(music_toggle);
@@ -112,10 +122,10 @@ public class PrimaryController {
        dj.clickSFX();
        System.out.println("Backing up game has been swithced");
        if(backup_toggle.isSelected()){
-          System.out.println("On");
+          backup_toggle.setText("On");
        }
        else{
-          System.out.println("Off");
+          backup_toggle.setText("Off");
        }
     }
     
