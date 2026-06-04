@@ -22,7 +22,7 @@ import javafx.scene.media.AudioClip;
 
 public class AudioManager{
    
-    private static Boolean toggle;
+    private static boolean toggle = true;
 
     private static MediaPlayer bgMusic; // Made these static to make sure only 1 audio is played.
     private static AudioClip clickSE;
@@ -38,7 +38,7 @@ public class AudioManager{
        this.lostSE = init("lost.mp3");
        this.selectSE = init("select.mp3");
        this.winnerSE = init("winner.mp3");
-       this.toggle = true;
+       //this.toggle = true;
     }
     
     public AudioClip init(String audioName){
@@ -73,9 +73,6 @@ public class AudioManager{
     public void clickSFX(){
        if(toggle){
           clickSE.play();
-       }
-       else{
-          clickSE.stop();
        }
     }
 }

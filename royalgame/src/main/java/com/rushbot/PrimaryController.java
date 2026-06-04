@@ -54,17 +54,18 @@ public class PrimaryController {
     }
     
     public void loadGame(ActionEvent act){
-       //click_ef.checkSeAudio();
+       dj.clickSFX();
        System.out.println("Loading Game!");
     }
     
     public void showCredit(ActionEvent act)throws IOException{
-       //click_ef.checkSeAudio();
+       dj.clickSFX();
        System.out.println("Showing credits");
        //coins.stop not needed since catch handles error with no event (e.g Start and Stop button doesn't exist if class is Null)
        App.setRoot("CreditScene");
     }
     public void openLink(ActionEvent act)throws IOException{
+       dj.clickSFX();
        System.out.print("Opening Link for: ");
        String link = "";
        
@@ -91,11 +92,12 @@ public class PrimaryController {
     }
     
     public void showSettings(ActionEvent act)throws IOException{
-       //click_ef.checkSeAudio();
+       dj.clickSFX();
        System.out.println("Showing settings");
        App.setRoot("SettingScene");
     }
     public void audioToggle(ActionEvent act)throws IOException{
+       dj.clickSFX();
        if(act.getSource() == music_toggle){
           System.out.println("Music has been toggle");
           dj.controlMusic(music_toggle);
@@ -107,6 +109,7 @@ public class PrimaryController {
     }
     
     public void backupGame(ActionEvent act)throws IOException{
+       dj.clickSFX();
        System.out.println("Backing up game has been swithced");
        if(backup_toggle.isSelected()){
           System.out.println("On");
@@ -117,7 +120,7 @@ public class PrimaryController {
     }
     
     public void onReturn(ActionEvent act)throws IOException{
-       //click_ef.checkSeAudio();
+       dj.clickSFX();
        System.out.println("Main Menu");
        App.setRoot("MenuScene");
     }

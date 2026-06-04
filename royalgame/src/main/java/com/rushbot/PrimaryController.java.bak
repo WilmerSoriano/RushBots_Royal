@@ -18,13 +18,16 @@ public class PrimaryController {
     
     @FXML
     private Hyperlink web_github;
+    
     @FXML
     private Hyperlink web_youtube;
     
     @FXML
     private ToggleButton music_toggle;
+    
     @FXML
     private ToggleButton sound_toggle;
+    
     @FXML
     private ToggleButton backup_toggle;
     
