@@ -3,7 +3,7 @@
 ## Project Status
 
 🚧 Work in progress...
-
+![menu screen](assets/intro.png)
 ---
 Rush Bot Royal is a simulation betting game where four bots compete to collect coins as fast as possible.  
 Players bet on which bot they believe will win each round and earn (or lose) money based on the final rankings.
@@ -102,6 +102,6 @@ Difficulty changes may affect:
 ## Tech Stack (Planned)
 
 - Java
-- Java Swing (for GUI)
+- Java FXML (for GUI)
 - Simulation-based game loop
 
