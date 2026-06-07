@@ -4,6 +4,15 @@
 
 🚧 Work in progress...
 ![menu screen](assets/intro.png)
+
+## UPDATE(06/07/2026): PostPoned of Rush Bot Royal:
+	* Hello, if you are reading this. Rush Bot Royal has been PostPoned until further notice.
+	I am currently wokring on other project that are going to take more resources. Of course I am enjoying making this game,
+	but 1st comes some other project I must work on to show the best my talent to future employer. 
+	I will come back soon to work on Rush Bot Royal, especially because I am on the end of the logic of the game and would
+	like to take my time to work on that aspect. Until then check out the project project I will be working on, in my most
+	recent repository!
+
 ---
 Rush Bot Royal is a simulation betting game where four bots compete to collect coins as fast as possible.  
 Players bet on which bot they believe will win each round and earn (or lose) money based on the final rankings.
